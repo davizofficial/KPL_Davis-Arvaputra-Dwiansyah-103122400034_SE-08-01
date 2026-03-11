@@ -1,8 +1,8 @@
 # Tugas Pendahuluan 03: GUI dengan HTML dan CSS
 
-  ''Nama'' : Davis Arvaputra Dwiansyah  
-  ''NIM'' : 103122400034
-  ''Kelas'' : SE-08-01  
+  **Nama** : Davis Arvaputra Dwiansyah  
+  **NIM** : 103122400034  
+  **Kelas** : SE-08-01  
   
 
 **Soal**
