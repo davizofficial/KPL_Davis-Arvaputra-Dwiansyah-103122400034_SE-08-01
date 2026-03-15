@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+/*
+  @import digunakan untuk mengambil/mengimpor font dari internet (Google Fonts).
+  Kita tidak perlu mengunduh font-nya secara manual — browser akan otomatis
+  mengambilnya dari server Google saat halaman dibuka.
+  Font yang diimpor di sini adalah "Inconsolata", yaitu font bergaya mesin ketik
+  (monospace) yang cocok untuk tampilan kode atau teks teknis.
+*/
+
+body {
+    /*
+    Selector "body" menargetkan seluruh isi halaman.
+    Semua gaya yang ditulis di sini akan berlaku secara global
+    ke semua elemen di dalam <body>, kecuali jika ditimpa oleh gaya lain.
+  */
+
+    font-family: "Inconsolata";
+    /* Mengatur jenis font seluruh halaman menjadi "Inconsolata" yang sudah diimpor di atas. */
+
+    font-weight: 500;
+    font-weight: 500;
+    /*
+    Mengatur ketebalan huruf. Nilai 500 berarti "Medium" —
+    lebih tebal dari normal (400), tapi lebih tipis dari bold (700).
+    Catatan: baris ini ditulis dua kali, yang merupakan duplikasi.
+    Salah satunya bisa dihapus karena tidak ada efek tambahan.
+  */
+
+    line-height: 1.2;
+    /*
+    Mengatur jarak antar baris teks.
+    Nilai 1.2 berarti jarak antar baris = 1.2x ukuran font saat ini.
+    Contoh: jika font 16px, maka jarak baris = 19.2px.
+    Nilai ini sedikit lebih rapat dari default browser (biasanya 1.5).
+  */
+
+    width: 100%;
+    /* Membuat elemen <body> mengambil lebar penuh dari jendela browser. */
+
+    display: flex;
+    /*
+    Mengaktifkan mode tata letak Flexbox pada <body>.
+    Flexbox memudahkan pengaturan posisi elemen anak (child elements)
+    baik secara horizontal maupun vertikal.
+  */
+
+    justify-content: center;
+    /*
+    Properti Flexbox yang memposisikan elemen anak secara horizontal ke tengah.
+    Karena <body> adalah flex container, maka .container di dalamnya
+    akan berada di tengah halaman secara horizontal.
+  */
+}
+
+.container {
+    /*
+    Selector ".container" menargetkan elemen yang memiliki class="container".
+    Ini adalah kotak utama yang membungkus semua konten halaman.
+  */
+
+    max-width: 700px;
+    /*
+    Membatasi lebar maksimum kotak konten menjadi 700 piksel.
+    Jika layar lebih lebar dari 700px, konten tidak akan terus melebar —
+    ini mencegah teks menjadi terlalu panjang dan sulit dibaca.
+  */
+
+    margin: auto;
+    /*
+    Mengatur margin (jarak luar) menjadi otomatis di semua sisi.
+    Efeknya: kotak ini akan berada di tengah halaman secara horizontal.
+    Bekerja bersama dengan max-width di atas.
+  */
+}
+
+.desc {
+    /*
+    Selector ".desc" menargetkan elemen dengan class="desc",
+    yaitu paragraf deskripsi/penjelasan di bawah judul.
+  */
+
+    max-width: 32em;
+    /*
+    Membatasi lebar maksimum paragraf deskripsi menjadi 32em.
+    Satuan "em" bersifat relatif terhadap ukuran font elemen tersebut.
+    Jika font 16px, maka 32em = 512px.
+    Tujuannya agar teks deskripsi tidak terlalu panjang per barisnya,
+    sehingga lebih nyaman dibaca.
+  */
+}
+
+.kotak-input {
+    /*
+    Selector ".kotak-input" menargetkan elemen <textarea>
+    yang memiliki class="kotak-input".
+  */
+
+    display: block;
+    /*
+    Mengubah tampilan elemen menjadi "block".
+    Secara default, <textarea> adalah elemen inline.
+    Dengan "block", textarea akan menempati satu baris penuh
+    dan elemen berikutnya akan otomatis turun ke bawahnya.
+  */
+
+    resize: none;
+    /*
+    Secara default, browser memperbolehkan pengguna mengubah ukuran <textarea>
+    dengan menarik sudut kanan bawahnya.
+    "resize: none" menonaktifkan fitur itu agar ukuran textarea tetap/terkunci
+    sesuai yang sudah ditentukan (rows="10" cols="60" di HTML).
+  */
+}
+
+p > span {
+    /*
+    Selector "p > span" menargetkan semua elemen <span> yang merupakan
+    anak LANGSUNG dari <p> (tanda ">" artinya anak langsung, bukan cucu).
+    Ini menargetkan ketiga angka statistik huruf: total, besar, dan kecil.
+  */
+
+    font-weight: bold;
+    /* Membuat semua angka statistik tampil tebal agar mudah terbaca. */
+}
+
+p > span:nth-child(1) {
+    /*
+    Selector ini menargetkan <span> pertama di dalam <p>.
+    ":nth-child(1)" artinya elemen anak ke-1.
+    Ini menargetkan angka total huruf (id="hf").
+  */
+
+    color: blue;
+    /* Angka total huruf ditampilkan dengan warna biru. */
+}
+
+p > span:nth-child(2) {
+    /*
+    Menargetkan <span> kedua di dalam <p>.
+    Ini adalah angka jumlah huruf BESAR (id="hb").
+  */
+
+    color: green;
+    /* Angka huruf besar ditampilkan dengan warna hijau. */
+}
+
+p > span:nth-child(3) {
+    /*
+    Menargetkan <span> ketiga di dalam <p>.
+    Ini adalah angka jumlah huruf kecil (id="hk").
+  */
+
+    color: red;
+    /* Angka huruf kecil ditampilkan dengan warna merah. */
+}

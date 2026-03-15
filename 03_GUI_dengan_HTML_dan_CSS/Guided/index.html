@@ -1,0 +1,171 @@
+<!doctype html>
+<!--
+  "<!DOCTYPE html>" memberitahu browser bahwa ini adalah dokumen HTML versi 5 (HTML5).
+  Harus selalu ditulis paling atas sebelum tag apapun.
+-->
+
+<html lang="en">
+    <!--
+  Tag <html> adalah pembungkus utama seluruh isi halaman web.
+  Atribut lang="en" memberitahu browser (dan mesin pencari) bahwa
+  bahasa utama halaman ini adalah Bahasa Inggris.
+-->
+
+    <head>
+        <!--
+    Tag <head> berisi informasi "di balik layar" tentang halaman ini.
+    Isinya TIDAK ditampilkan langsung ke pengguna, tapi sangat penting
+    untuk pengaturan tampilan dan perilaku halaman.
+  -->
+
+        <meta charset="UTF-8" />
+        <!--
+      Tag <meta charset> menentukan jenis karakter/huruf yang digunakan.
+      "UTF-8" adalah standar universal yang mendukung semua karakter,
+      termasuk huruf Indonesia seperti é, ñ, dan simbol-simbol lainnya.
+      Tanpa ini, karakter khusus bisa tampil rusak/aneh.
+    -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--
+      Tag ini mengatur tampilan halaman di layar perangkat yang berbeda.
+      - "width=device-width"  → lebar halaman mengikuti lebar layar perangkat
+      - "initial-scale=1.0"  → zoom awal halaman adalah 100% (tidak diperbesar/perkecil)
+      Sangat penting agar tampilan di HP tidak berantakan.
+    -->
+
+        <title>Document</title>
+        <!--
+      Tag <title> menentukan judul yang muncul di tab browser.
+      Juga digunakan oleh mesin pencari (Google, dll.) sebagai judul hasil pencarian.
+    -->
+
+        <link rel="stylesheet" href="style.css" />
+        <!--
+      Tag <link> menghubungkan file CSS eksternal ke halaman ini.
+      - rel="stylesheet"  → memberitahu browser ini adalah file gaya (CSS)
+      - href="index.css"  → lokasi/nama file CSS-nya adalah "index.css"
+      File CSS inilah yang mengatur warna, ukuran, font, dan tampilan visual halaman.
+    --></head>
+
+    <body>
+        <!--
+    Tag <body> adalah tempat semua konten yang TERLIHAT oleh pengguna.
+    Semua teks, tombol, gambar, dan elemen lainnya ditulis di sini.
+  -->
+
+        <div class="container">
+            <!--
+      Tag <div> adalah kotak pembungkus yang tidak memiliki tampilan bawaan.
+      class="container" memberinya nama "container" agar bisa diatur gayanya di CSS.
+      Biasanya digunakan untuk mengelompokkan dan memusatkan isi halaman.
+    -->
+
+            <h1>Pengkonversi Gaya Teks</h1>
+            <!--
+        Tag <h1> adalah judul utama halaman (Heading level 1).
+        Ukurannya paling besar dari semua heading (h1 sampai h6).
+        Sebaiknya hanya ada satu <h1> per halaman untuk SEO yang baik.
+      -->
+
+            <p class="desc">
+                Alat ini bisa mengubah teks menjadi huruf besar, huruf kecil,
+                dan paragraf.
+            </p>
+            <!--
+        Tag <p> digunakan untuk menampilkan sebuah paragraf teks.
+        class="desc" memberinya nama "desc" agar bisa diberi gaya khusus di CSS
+        (misalnya: warna abu-abu, ukuran font lebih kecil, dll).
+      -->
+
+            <label for="editor-kecil">Masukkan teks:</label>
+            <!--
+        Tag <label> adalah teks keterangan untuk sebuah elemen input.
+        Atribut for="editor-kecil" menghubungkan label ini ke textarea
+        yang memiliki id="editor-kecil".
+        Manfaatnya: saat pengguna klik tulisan "Masukkan teks:",
+        kursor otomatis masuk ke dalam kotak textarea.
+      -->
+
+            <textarea
+                class="kotak-input"
+                id="editor-kecil"
+                rows="10"
+                cols="60"
+                placeholder="Kata-kata..."
+            ></textarea>
+            <!--
+        Tag <textarea> adalah kotak teks besar yang bisa diisi pengguna (multi-baris).
+        Berbeda dengan <input> yang hanya satu baris.
+
+        Penjelasan tiap atribut:
+        - class="kotak-input"     = nama kelas CSS untuk mengatur tampilan kotak ini
+        - id="editor-kecil"           = pengenal unik, digunakan oleh <label> dan JavaScript
+                                    untuk mengakses elemen ini
+        - rows="10"                   = tinggi kotak = 10 baris teks
+        - cols="60"                   = lebar kotak = 60 karakter
+        - placeholder="Kata-kata..."  = teks abu-abu yang muncul saat kotak masih kosong,
+                                       berfungsi sebagai petunjuk/contoh isian
+      -->
+
+            <p>
+                Huruf: <span id="hf">0</span>, huruf besar:
+                <span id="hb">0</span>, huruf kecil: <span id="hk">0</span>
+            </p>
+            <!--
+        Paragraf ini menampilkan statistik jumlah huruf secara real-time.
+
+        Tag <span> digunakan untuk membungkus teks kecil di dalam baris
+        tanpa membuat baris baru. Berbeda dengan <div> yang membuat blok baru.
+
+        Tiap <span> punya id unik agar JavaScript bisa mengubah angkanya:
+        - id="hf"  → Total semua huruf (huruf = semua karakter)
+        - id="hb"  → Jumlah huruf BESAR (uppercase: A, B, C, ...)
+        - id="hk"  → Jumlah huruf kecil (lowercase: a, b, c, ...)
+
+        Angka "0" di dalamnya adalah nilai awal sebelum pengguna mengetik apapun.
+      -->
+
+            <div>
+                <!--
+        Tag <div> ini digunakan sebagai wadah/kelompok untuk ketiga tombol di bawah.
+        Memudahkan pengaturan tata letak tombol-tombol tersebut lewat CSS.
+      -->
+
+                <button id="huruf-besar">Besarkan</button>
+                <!--
+          Tombol untuk mengubah semua teks menjadi HURUF BESAR (UPPERCASE).
+          id="huruf-besar" digunakan oleh JavaScript untuk mendeteksi
+          ketika tombol ini diklik dan menjalankan fungsi yang sesuai.
+          Contoh: "halo dunia" → "HALO DUNIA"
+        -->
+
+                <button id="huruf-kecil">Kecilkan</button>
+                <!--
+          Tombol untuk mengubah semua teks menjadi huruf kecil (lowercase).
+          id="huruf-kecil" adalah pengenal unik untuk JavaScript.
+          Contoh: "HALO DUNIA" → "halo dunia"
+        -->
+
+                <button id="huruf-paragraf">Paragrafkan</button>
+                <!--
+          Tombol untuk mengubah teks menjadi gaya "Title Case" atau
+          kapital di awal kalimat/paragraf (tergantung logika di scripts.js).
+          id="huruf-paragraf" digunakan oleh JavaScript.
+          Contoh: "halo dunia" → "Halo Dunia" atau "Halo dunia."
+        -->
+            </div>
+        </div>
+
+        <script src="index.js"></script>
+        <!--
+      Tag <script> menghubungkan file JavaScript eksternal ke halaman ini.
+      src="index.js" adalah lokasi file JavaScript-nya.
+
+      KENAPA DILETAKKAN PALING BAWAH (sebelum <body>)?
+      Agar browser selesai memuat semua elemen HTML terlebih dahulu,
+      baru kemudian menjalankan JavaScript. Jika diletakkan di <head>,
+      JavaScript bisa gagal karena elemen yang ingin dimanipulasi
+      belum ada saat script dijalankan.
+    --></body>
+</html>
