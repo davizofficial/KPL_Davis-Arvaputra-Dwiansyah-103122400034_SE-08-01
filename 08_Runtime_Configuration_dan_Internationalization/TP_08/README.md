@@ -20,7 +20,7 @@ Tersedia di [index.js](./index.js).
 
 ## Output
 
-![output](output.png)
+![output](output.jpg)
 
 ## Deskripsi
 
