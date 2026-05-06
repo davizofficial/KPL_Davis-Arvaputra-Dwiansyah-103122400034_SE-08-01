@@ -1,0 +1,9 @@
+{
+  "name": "soal_matematika",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "guided": "file:.."
+  }
+}
