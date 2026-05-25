@@ -1,0 +1,70 @@
+# Tugas Pendahuluan 13: Design Pattern Implementation
+
+  **Nama** : Davis Arvaputra Dwiansyah  
+  **NIM** : 103122400034  
+  **Kelas** : SE-08-01  
+
+## Tugas
+
+Bukalah repostori kode tugas besarmu dan carilah satu saja design pattern yang digunakan di dalamnya (boleh design pattern apa saja, akan direviu kasus-per-kasus). Sertakan kodenya di tugas ini dan coba jelaskan desainnya.
+
+## Program/Kode
+
+Berikut saya sertakan contoh file Design Patern pada tugas besar kami:
+
+- [backend/repository.ts](backend/repository.ts)
+- [backend/controllers/booking.ts](backend/controllers/booking.ts)
+- [backend/services/booking.ts](backend/services/booking.ts)
+- [backend/routes/booking.ts](backend/routes/booking.ts)
+- [frontend/index.html](frontend/index.html)
+
+
+## Output
+
+-
+
+## Deskripsi
+
+Pada tugas besar, kami menerapkan Design Patern, yaitu MVC:
+
+## View
+
+Bagian View berada di folder frontend. Folder ini berisi tampilan yang dilihat pengguna seperti halaman HTML dan file TypeScript.
+
+Contoh:
+
+- index.html (Tampilan frontend utama)
+
+## Route
+
+Bagian Route berada di folder backend/routes/. Route ini berguna untuk menghubungkan endpoint API dengan controller yang sesuai.
+
+Contoh:
+
+- booking.ts (Menghubungkan endpoint API booking ke controller)
+- auth.ts (Menangani otentikasi pengguna)
+
+## Controller
+
+Bagian Controller berada di folder backend/controllers. Controller menerima request dari user, memanggil service, lalu mengirim response kembali ke fronteend.
+
+Contoh:
+
+- booking.ts (Menangani request booking dan mengarahkan ke service)
+- auth.ts (Menangani otentikasi dan session)
+
+## Service
+
+Bagian Service berada di folder backend/services/. Service berisi logic utama seperti validasi data, perhitungan harga, dan proses booking dari website.
+
+Contoh:
+
+- booking.ts (Logika bisnis pemesanan, validasi, pembayaran)
+
+## Repository
+
+Bagian Repository berada di folder backend/. Repository akan mengakses database dan query SQL alias jembatan database dengan service.
+
+Contoh:
+
+- repository.ts (Menangani akses database dan query untuk entity)
