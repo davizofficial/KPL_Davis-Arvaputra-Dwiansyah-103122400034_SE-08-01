@@ -1,4 +1,4 @@
-# Tugas Mandiri 13: Design Pattern Implementation
+# Tugas Pendahuluan 14: Clean Code
 
   **Nama** : Davis Arvaputra Dwiansyah  
   **NIM** : 103122400034  
